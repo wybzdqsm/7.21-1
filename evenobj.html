@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ .one{
+            width:100px;
+            height:100px;
+            background: red;
+            position: absolute;
+        }
+        .two{
+            width:400px;
+            height:400px;
+            margin:200px;
+            border:1px solid black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="two">
+    <div class="one"></div>
+</div>
+<script src="evenobj.js"></script>
+    <script>
+        //事件对象 事件处理程序的第一个参数   记录事件发生的一些详细信息
+         //鼠标相对于屏幕的距离   screenX  screenY
+         //鼠标相对于游览器的距离  clientX  clientY
+         //相对于事件源的距离   offsetX   offsetY
+        //  获得事件源     target
+        //ev.preventDefault()   终止游览器默认行为
+
+
+    // var one=document.querySelector(".one")
+    //   one.onmousedown=function(ev){
+
+    //     var evx=ev.clientX-one.offsetLeft;
+    //     var evy=ev.clientY-one.offsetTop;
+    //  document.onmousemove=function(ev){
+    //       var movex=ev.clientX;
+    //       var movey=ev.clientY;
+    //       one.style.left=movex-evx+"px";
+    //       one.style.top=movey-evy+"px";
+    //       ev.preventDefault() ;
+         
+    //    }
+    // document.onmouseup=function(ev){
+    //       document.onmousemove=null;
+    //        document.onmouseup=null;
+    //    }
+     
+    // }
+     var obj=new drag(".one")
+        // obj.y=false;
+       obj.side.x1=0
+       obj.side.x2=300
+       obj.side.y1=0
+       obj.side.y2=300
+        obj.move(function(){
+            this.style.background="yellow"
+        });
+    
+
+    </script>
+</body>
+</html>
